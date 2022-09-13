@@ -13,9 +13,7 @@ window.addEventListener("load", function(){
     form.addEventListener("submit", (e) => {
     
         e.preventDefault();
-
         let errores = []
-
         if (inputNombre.value == ""){
     
             errores.push("Debes completar el campo Nombre")              
