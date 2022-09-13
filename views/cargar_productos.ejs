@@ -2,6 +2,7 @@
 <html lang="en">
     <%- include ('./partials/head.ejs')%>
     <link rel="stylesheet" href="../css/styles_cargar_productos.css">
+    <script src="/js/productStore.js"> </script>
 <body>
     <%- include ('./partials/header.ejs')%>
  
@@ -14,6 +15,10 @@
    </div>
    <fieldset class="grupo"> 
       <div class="campo">
+        <div class="errores">
+            <ul class="ulErrores">  </ul>
+        </div>
+
        <label for="nombre"><strong>Nombre del producto:</strong></label>
        <input type="text" name="name" id="nombre" placeholder="Ej.: Café Coffea origen 200g">
        <% if (locals.errors && errors.name) { %>
@@ -32,7 +37,7 @@
 
     <div class="campo">
        <label for="descripción"><strong>Descripción:</strong></label>
-       <textarea name="description" id="descripción" placeholder="Escriba la descripción"  ></textarea>
+       <textarea name="description" id="descripcion" placeholder="Escriba la descripción"  ></textarea>
        <% if (locals.errors && errors.description) { %>
         <div class="text-danger"> <%= errors.description.msg %> </div>
         <% } %>
@@ -41,7 +46,7 @@
 
     <div class="campo">
         <label class="imagen-producto">Elegí la foto del producto</label>        
-        <input type="file" name="image">
+        <input type="file" name="image" id="imagenProducto">
         <% if (locals.errors && errors.image) { %>
             <div class="text-danger"> <%= errors.image.msg %> </div>
             <% } %>
