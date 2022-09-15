@@ -17,7 +17,7 @@
    <form action="/users/register" method="POST" class="create-form" enctype="multipart/form-data">
            <div>
        <h1 id="titulo">Crear cuenta</h1>
-       <p id="subtitulo">Comprá más rápido y llevá el control de tus pedidos, ¡en un solo lugar!</p>
+       <p id="subtitulo"></p>
    </div>
    <fieldset class="grupo"> 
 
@@ -40,6 +40,8 @@
    <% if (locals.errors && errors.name) {%>
   <div class="text-danger"><%= errors.name.msg %>  </div>
   <% } %>
+  <p class="errorName errorFront"></p>
+
 
     <div class="campo">
        <label for="email"><strong>E-mail:</strong></label>
@@ -49,6 +51,10 @@
      <% if (locals.errors && errors.email) {%>
         <div class="text-danger"><%= errors.email.msg %>  </div>
         <% } %>
+        <p class="errorEmail errorFront"></p>
+
+
+
      <div class="campo">
        <label for="telefono"><strong>Telefono (opcional):</strong></label>
        <input 
@@ -57,6 +63,7 @@
      <% if (locals.errors && errors.tel) {%>
         <div class="text-danger"><%= errors.tel.msg %>  </div>
         <% } %>
+        
 
      <div class="campo">
          <label for="contraseña"><strong>Contraseña:</strong></label>
@@ -65,9 +72,12 @@
       <% if (locals.errors && errors.password) {%>
         <div class="text-danger"><%= errors.password.msg %>  </div>
         <% } %>
+        <p class="errorPassword errorFront">Este campo debe estar completo y debe tener al menos 8 caracteres </p>
       <div class="campo">
+
            <label for="contraseña"><strong>Confirmar contraseña:</strong></label>
            <input type="password" name="confirmPassword" id="confirmarContrasenia" placeholder="**********">
+           <p class="errorConfirmPassword errorFront">Este campo debe estar completo y debe tener al menos 2 caracteres </p>
            
        </div>
    <div>

@@ -1,5 +1,5 @@
-window.addEventListener("load", function(){
-    const form= document.querySelector(".create-form")
+window.addEventListener("load", function () {
+    const form = document.querySelector(".create-form")
     const inputProfileImage = document.querySelector("#profileImage")
     const inputNombre = document.querySelector("#nombre")
     const inputEmail = document.querySelector("#email")
@@ -11,115 +11,131 @@ window.addEventListener("load", function(){
 
     //inputNombre.focus()
 
-    let errores= []
+    let errores = []
 
-  inputProfileImage.addEventListener("blur",()=>{
+    inputProfileImage.addEventListener("blur", () => {
 
-    if (inputProfileImage.value == ""){
+        if (inputProfileImage.value == "") {
 
-        errores.push("Debes cargar una imagen")
+            errores.push("Debes cargar una imagen")
 
-           
-        
 
-}
-}
-) 
 
-inputNombre.addEventListener("blur",()=>{
 
-           if (inputNombre.value == ""){
-
-            errores.push("Debes completar el campo Nombre")              
-    
-        } else if (inputNombre.value.length<2){
-            errores.push("El nombre tiene que tener más de dos caracteres")
-            
         }
-}
-) 
+    }
+    )
 
-inputEmail.addEventListener("blur",()=>{
+    inputNombre.addEventListener("keyup", () => {
 
-    if (inputNombre.value == ""){
+        let errorName = document.querySelector(".errorName")
 
-     errores.push("Debes completar el campo Email")              
+        if (inputNombre.value.length < 2) {
 
- } 
- 
-//  else if (inputNombre.value.length<2){
-//      errores.push("El nombre tiene que tener más de dos caracteres")
-     
-//  }
-}
-) 
-
-inputTelefono.addEventListener("blur",()=>{
-
-    if (inputTelefono.value == ""){
-
-     errores.push("Debes ingresar un número")              
-
- } 
-}
-) 
-
-inputContrasenia.addEventListener("blur",()=>{
-
-    if (inputContrasenia.value == ""){
-
-     errores.push("Debes completar el campo Contraseña")              
-
- } else if (inputContrasenia.value.length<8){
-     errores.push("La contraseña tiene que tener al menos ocho caracteres")
-     
- }
-}
-) 
-
-inputConfirmarContrasenia.addEventListener("blur",()=>{
-
-    if (inputConfirmarContrasenia.value == ""){
-
-     errores.push("Debes completar el campo Confirmar Contraseña")              
-
- } else if (inputConfirmarContrasenia.value.length<8){
-     errores.push("La contraseña tiene que tener al menos ocho caracteres")
-     
- }
- else if (inputConfirmarContrasenia.value == inputContrasenia.value){
-    errores.push("La contraseña tiene que ser igual a la anterior")
-    
-}
-}
-) 
+            errorName.innerHTML = "El nombre tiene que tener más de dos caracteres"
 
 
 
-form.addEventListener("submit", (e) => {
+            //  inputNombre.classList.remove("errorName")               
 
-    e.preventDefault();
+        } else {
+            // inputNombre.classList.add("errorName") 
+            errorName.innerHTML = " "
 
-    if (errores.length > 0) {
-
-   
-        //ulErrores.classList.add("alert-warning")
-    
-        for (let i=0; i<errores.length ; i++){
-    
-            
-    
-            ulErrores.innerHTML += "<li>" + errores[i] + "<li>"
         }
-        //  form.submit()
+
+        // else if (inputNombre.value.length<2){
+        //     errores.push("El nombre tiene que tener más de dos caracteres")
+
+        // }
+    }
+    )
+
+    inputEmail.addEventListener("keyup", () => {
+
+        let emailValidation = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+
+        let errorEmail = document.querySelector(".errorEmail")
+
+        if (emailValidation.test(inputEmail.value)) {
+
+            errorEmail.innerHTML = "Este campo tiene que tener campo email"
+
+        } else {
+            errorEmail.innerHTML = " "
+        }
+
     }
 
-    console.log("haciendo submit");
 
-    //
-} 
-)
+    )
+
+    inputTelefono.addEventListener("blur", () => {
+
+        if (inputTelefono.value == "") {
+
+            errores.push("Debes ingresar un número")
+
+        }
+    }
+    )
+
+    inputContrasenia.addEventListener("blur", () => {
+
+        if (inputContrasenia.value == "") {
+
+            errores.push("Debes completar el campo Contraseña")
+
+        } else if (inputContrasenia.value.length < 8) {
+            errores.push("La contraseña tiene que tener al menos ocho caracteres")
+
+        }
+    }
+    )
+
+    inputConfirmarContrasenia.addEventListener("blur", () => {
+
+        if (inputConfirmarContrasenia.value == "") {
+
+            errores.push("Debes completar el campo Confirmar Contraseña")
+
+        } else if (inputConfirmarContrasenia.value.length < 8) {
+            errores.push("La contraseña tiene que tener al menos ocho caracteres")
+
+        }
+        else if (inputConfirmarContrasenia.value == inputContrasenia.value) {
+            errores.push("La contraseña tiene que ser igual a la anterior")
+
+        }
+    }
+    )
 
 
- 
-    }) 
+
+    form.addEventListener("submit", (e) => {
+
+        e.preventDefault();
+
+        if (errores.length > 0) {
+
+
+            //ulErrores.classList.add("alert-warning")
+
+            for (let i = 0; i < errores.length; i++) {
+
+
+
+                ulErrores.innerHTML += "<li>" + errores[i] + "<li>"
+            }
+            //  form.submit()
+        }
+
+        console.log("haciendo submit");
+
+        //
+    }
+    )
+
+
+
+}) 

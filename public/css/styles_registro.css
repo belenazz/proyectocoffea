@@ -229,6 +229,15 @@ div.text-danger {
     color: red; 
     text-decoration: none;
 }
+
+/* .errorName {
+    display: none;
+    
+} */
+
+.errorFront {
+    color: red; 
+}
  
 /*Footer del formulario de registro de la página*/
 
