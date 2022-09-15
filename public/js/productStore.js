@@ -9,7 +9,6 @@ window.addEventListener("load", function(){
 
     inputNombre.focus()   
        
-    
     form.addEventListener("submit", (e) => {
     
         e.preventDefault();
@@ -31,7 +30,6 @@ window.addEventListener("load", function(){
        
         } 
 
-
         // else if (inputContrasenia.value.length<8){
         //     errores.push("La contraseña tiene que tener al menos ocho caracteres")
             
@@ -39,12 +37,9 @@ window.addEventListener("load", function(){
     
         if (errores.length > 0) {
     
-       
             //ulErrores.classList.add("alert-warning")
         
             for (let i=0; i<errores.length ; i++){
-        
-                
         
                 ulErrores.innerHTML += "<li>" + errores[i] + "<li>"
             }
@@ -52,10 +47,6 @@ window.addEventListener("load", function(){
         }
     
         console.log("haciendo submit");
-    
-        //
     } 
     )
-
- 
     }) 

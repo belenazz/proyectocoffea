@@ -8,13 +8,6 @@ window.addEventListener("load", function(){
 
     inputEmail.focus()
 
-    
-    
-       
-    
-    
-    
-    
     form.addEventListener("submit", (e) => {
     
         e.preventDefault();
@@ -36,24 +29,17 @@ window.addEventListener("load", function(){
         }
     
         if (errores.length > 0) {
-    
        
             //ulErrores.classList.add("alert-warning")
         
             for (let i=0; i<errores.length ; i++){
-        
                 
-        
                 ulErrores.innerHTML += "<li>" + errores[i] + "<li>"
             }
             //  form.submit()
         }
     
         console.log("haciendo submit");
-    
-        //
     } 
     )
-
- 
     }) 

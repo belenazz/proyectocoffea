@@ -3,6 +3,7 @@
     <%- include ('./partials/head.ejs')%>
     <link rel="stylesheet" href="/css/styles_cargar_productos.css">
     <link rel="stylesheet" href="/css/styles.css">
+    <script src="/js/productEdit.js"> </script>
 <body>
     <%- include ('./partials/header.ejs')%>
  
@@ -14,6 +15,12 @@
                 <!-- <p id="subtitulo">Comprá más rápido y llevá el control de tus pedidos, ¡en un solo lugar!</p>-->
             </div>
             <fieldset class="grupo"> 
+
+                <div class="campo">
+                    <div class="errores">
+                        <ul class="ulErrores">  </ul>
+                    </div>
+
                     <div class="campo">
                         <label for="nombre"><strong>Nombre del producto:</strong></label>
                         <input type="text" name="name" id="nombre" value="<%= productToEdit.name %>" />
@@ -33,23 +40,15 @@
 
                     <div class="campo">
                         <label for="descripción"><strong>Descripción:</strong></label>
-                        <textarea name="description" id="descripción" ? ><%= productToEdit.description %></textarea>
+                        <textarea name="description" id="descripcion" ? ><%= productToEdit.description %></textarea>
                         <% if (locals.errors && errors.description) { %>
                             <div class="text-danger"> <%= errors.description.msg %> </div>
                         <% } %>
                     </div>
 
-                    <!-- <div class="campo">
-                    <label class="imagen-caracteristicas"><strong>Características:</strong></label>
-                    <input type="file" name="features">
-                    <div id="imagen">
-                        <img id="imagencaracteristicas" src="/images/Caracteristicas.PNG" alt="Café juan Valdéz">
-                    </div> 
-                    </div>-->
-
                     <div class="campo">
                         <label class="imagen-producto"><strong>Elegí la foto del producto</strong></label>
-                        <input type="file" name="image" />
+                        <input type="file" name="image" id="imagenProducto"/>
                         <% if (locals.errors && errors.image) { %>
                             <div class="text-danger"> <%= errors.image.msg %> </div>
                         <% } %>
