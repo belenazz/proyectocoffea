@@ -51,7 +51,7 @@
      <% if (locals.errors && errors.email) {%>
         <div class="text-danger"><%= errors.email.msg %>  </div>
         <% } %>
-        <p class="errorEmail errorFront"></p>
+        <p class="errorEmail errorFront">Debes ingresar un email válido.</p>
 
 
 
@@ -72,12 +72,12 @@
       <% if (locals.errors && errors.password) {%>
         <div class="text-danger"><%= errors.password.msg %>  </div>
         <% } %>
-        <p class="errorPassword errorFront">Este campo debe estar completo y debe tener al menos 8 caracteres </p>
+        <p class="errorPassword errorFront"></p>
       <div class="campo">
 
            <label for="contraseña"><strong>Confirmar contraseña:</strong></label>
            <input type="password" name="confirmPassword" id="confirmarContrasenia" placeholder="**********">
-           <p class="errorConfirmPassword errorFront">Este campo debe estar completo y debe tener al menos 2 caracteres </p>
+           <p class="errorConfirmPassword errorFront"></p>
            
        </div>
    <div>

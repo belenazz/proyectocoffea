@@ -28,7 +28,8 @@
                             <div class="text-danger"> <%= errors.name.msg %> </div>
                         <% } %>
                     </div>
-            
+                    <p class="errorName errorFront"></p>
+
                     <div class="campo">
                         <label for="precio"><strong>Precio:</strong></label>
                         <input type="number" name="price" id="precio" value="<%= productToEdit.price %>" /> 
@@ -45,6 +46,7 @@
                             <div class="text-danger"> <%= errors.description.msg %> </div>
                         <% } %>
                     </div>
+                    <p class="errorDescription errorFront"></p>
 
                     <div class="campo">
                         <label class="imagen-producto"><strong>Elegí la foto del producto</strong></label>

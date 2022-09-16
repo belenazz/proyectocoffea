@@ -24,8 +24,9 @@
        <% if (locals.errors && errors.name) { %>
         <div class="text-danger"> <%= errors.name.msg %> </div>
         <% } %>
-   </div>
-  
+        </div>
+        <p class="errorName errorFront"></p>
+
      <div class="campo">
        <label for="precio"><strong>Precio:</strong></label>
        <input type="number" name="price" id="precio" placeholder="$5000">
@@ -42,7 +43,7 @@
         <div class="text-danger"> <%= errors.description.msg %> </div>
         <% } %>
     </div>
-   
+    <p class="errorDescription errorFront"></p>
 
     <div class="campo">
         <label class="imagen-producto">Elegí la foto del producto</label>        

@@ -8,7 +8,27 @@ window.addEventListener("load", function(){
     const ulErrores = document.querySelector(".ulErrores")
 
     inputNombre.focus()   
-       
+    
+    inputNombre.addEventListener("keyup", () => {
+        let errorName = document.querySelector(".errorName")
+        if (inputNombre.value.length < 5) {
+
+            errorName.innerHTML = "El nombre debe tener al menos cinco caracteres"
+            //  inputNombre.classList.remove("errorName")               
+        } else {
+            // inputNombre.classList.add("errorName") 
+            errorName.innerHTML = " "
+        }})
+
+    inputDescripcion.addEventListener("keyup", () => {
+        let errorDescription = document.querySelector(".errorDescription")
+        if (inputDescripcion.value.length < 20) {
+           errorDescription.innerHTML = "El nombre debe tener al menos veinte caracteres"
+        } else {
+            errorDescription.innerHTML = " "
+        }})
+    
+
     form.addEventListener("submit", (e) => {
     
         e.preventDefault();

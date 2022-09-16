@@ -9,6 +9,26 @@ window.addEventListener("load", function(){
 
     inputNombre.focus()   
        
+    inputNombre.addEventListener("keyup", () => {
+        let errorName = document.querySelector(".errorName")
+        if (inputNombre.value.length < 5) {
+
+            errorName.innerHTML = "El nombre debe tener al menos cinco caracteres"
+            //  inputNombre.classList.remove("errorName")               
+        } else {
+            // inputNombre.classList.add("errorName") 
+            errorName.innerHTML = " "
+        }})
+
+    inputDescripcion.addEventListener("keyup", () => {
+        let errorDescription = document.querySelector(".errorDescription")
+        if (inputDescripcion.value.length < 20) {
+           errorDescription.innerHTML = "El nombre debe tener al menos veinte caracteres"
+        } else {
+            errorDescription.innerHTML = " "
+        }})
+    
+    
     form.addEventListener("submit", (e) => {
     
         e.preventDefault();
@@ -24,16 +44,6 @@ window.addEventListener("load", function(){
             errores.push("Debes completar el campo descripción")              
        
         } 
-        if (inputPrecio.value == ""){
-    
-            errores.push("Debes completar el campo precio")              
-       
-        } 
-
-        // else if (inputContrasenia.value.length<8){
-        //     errores.push("La contraseña tiene que tener al menos ocho caracteres")
-            
-        // }    QUE SEA UN NUMERO
     
         if (errores.length > 0) {
     

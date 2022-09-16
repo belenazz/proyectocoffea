@@ -17,7 +17,7 @@ window.addEventListener("load", function () {
 
         if (inputProfileImage.value == "") {
 
-            errores.push("Debes cargar una imagen")
+            errores.push("Debe cargar una imagen")
 
 
 
@@ -32,9 +32,7 @@ window.addEventListener("load", function () {
 
         if (inputNombre.value.length < 2) {
 
-            errorName.innerHTML = "El nombre tiene que tener más de dos caracteres"
-
-
+            errorName.innerHTML = "El nombre debe tener al menos dos caracteres"
 
             //  inputNombre.classList.remove("errorName")               
 
@@ -59,7 +57,7 @@ window.addEventListener("load", function () {
 
         if (emailValidation.test(inputEmail.value)) {
 
-            errorEmail.innerHTML = "Este campo tiene que tener campo email"
+            errorEmail.innerHTML = "Debe ingresar un email válido"
 
         } else {
             errorEmail.innerHTML = " "
@@ -74,43 +72,45 @@ window.addEventListener("load", function () {
 
         if (inputTelefono.value == "") {
 
-            errores.push("Debes ingresar un número")
+            errores.push("Debe ingresar un número")
 
         }
     }
     )
 
-    inputContrasenia.addEventListener("blur", () => {
+    inputContrasenia.addEventListener("keyup", () => {
+        let errorPassword = document.querySelector(".errorPassword")
 
-        if (inputContrasenia.value == "") {
-
-            errores.push("Debes completar el campo Contraseña")
-
-        } else if (inputContrasenia.value.length < 8) {
-            errores.push("La contraseña tiene que tener al menos ocho caracteres")
-
+        if (inputContrasenia.value.length < 8) {
+            errorPassword.innerHTML = "La contraseña debe tener al menos ocho caracteres"              
+        } else {
+            errorPassword.innerHTML = " "
         }
     }
     )
-
-    inputConfirmarContrasenia.addEventListener("blur", () => {
-
-        if (inputConfirmarContrasenia.value == "") {
-
-            errores.push("Debes completar el campo Confirmar Contraseña")
-
-        } else if (inputConfirmarContrasenia.value.length < 8) {
-            errores.push("La contraseña tiene que tener al menos ocho caracteres")
-
-        }
-        else if (inputConfirmarContrasenia.value == inputContrasenia.value) {
-            errores.push("La contraseña tiene que ser igual a la anterior")
-
-        }
+        // if (inputContrasenia.value == "") {
+        //    errores.push("Debes completar el campo Contraseña")
+        //} else if (inputContrasenia.value.length < 8) {
+        //    errores.push("La contraseña tiene que tener al menos ocho caracteres")
+        //}
     }
     )
 
+    inputConfirmarContrasenia.addEventListener("keyup", () => {
+        let errorConfirmPassword = document.querySelector(".errorConfirmPassword")
 
+        if (inputConfirmarContrasenia.value.length < 8) {
+            errorConfirmPassword.innerHTML = "La contraseña debe tener al menos ocho caracteres"              
+        } else {
+            errorConfirmPassword.innerHTML = " "
+        }})
+
+        //if (inputConfirmarContrasenia.value == "") {
+        //errores.push("Debes completar el campo Confirmar Contraseña")
+        //} else if (inputConfirmarContrasenia.value.length < 8) {
+        //    errores.push("La contraseña tiene que tener al menos ocho caracteres")}
+        //else if (inputConfirmarContrasenia.value == inputContrasenia.value) {
+        //    errores.push("La contraseña tiene que ser igual a la anterior")}})
 
     form.addEventListener("submit", (e) => {
 
@@ -138,4 +138,3 @@ window.addEventListener("load", function () {
 
 
 
-}) 

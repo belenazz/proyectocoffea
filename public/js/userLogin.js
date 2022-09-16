@@ -8,6 +8,24 @@ window.addEventListener("load", function(){
 
     inputEmail.focus()
 
+    inputContrasenia.addEventListener("keyup", () => {
+        let errorPassword = document.querySelector(".errorPassword")
+
+        if (inputContrasenia.value.length == "") {
+            errorPassword.innerHTML = "Debe completar este campo"              
+        } else {
+            errorPassword.innerHTML = " "
+        }
+    }
+    )
+        // if (inputContrasenia.value == "") {
+        //    errores.push("Debes completar el campo Contraseña")
+        //} else if (inputContrasenia.value.length < 8) {
+        //    errores.push("La contraseña tiene que tener al menos ocho caracteres")
+        //}
+    }
+    )
+
     form.addEventListener("submit", (e) => {
     
         e.preventDefault();
@@ -42,4 +60,4 @@ window.addEventListener("load", function(){
         console.log("haciendo submit");
     } 
     )
-    }) 
+     
