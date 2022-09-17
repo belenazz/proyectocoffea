@@ -8,6 +8,42 @@ window.addEventListener("load", function(){
 
     inputEmail.focus()
 
+    inputEmail.addEventListener("keyup", () => {        
+
+        let errorEmail = document.querySelector(".errorEmail")
+    
+            if (!validator.isEmail(inputEmail.value)) {
+    
+                errorEmail.innerHTML = "Debe ingresar un email válido"
+    
+            } else {
+                errorEmail.innerHTML = " "
+            }
+    
+            
+    
+        }    
+    
+        )
+
+    inputEmail.addEventListener("blur", () => {        
+
+        let errorEmail = document.querySelector(".errorEmail")
+    
+            if (inputEmail.value == "") {
+    
+                errorEmail.innerHTML = "Debes completar este campo"
+    
+            } else {
+                errorEmail.innerHTML = " "
+            }
+    
+            
+    
+        }
+
+        )
+        
     inputContrasenia.addEventListener("keyup", () => {
         let errorPassword = document.querySelector(".errorPassword")
 
@@ -18,46 +54,9 @@ window.addEventListener("load", function(){
         }
     }
     )
-        // if (inputContrasenia.value == "") {
-        //    errores.push("Debes completar el campo Contraseña")
-        //} else if (inputContrasenia.value.length < 8) {
-        //    errores.push("La contraseña tiene que tener al menos ocho caracteres")
-        //}
+        
     }
     )
 
-    form.addEventListener("submit", (e) => {
+  
     
-        e.preventDefault();
-
-        let errores = []
-
-        if (inputEmail.value == ""){
-    
-            errores.push("Debes completar el campo Email")              
-       
-        } 
-        if (inputContrasenia.value == ""){
-    
-            errores.push("Debes completar el campo Contraseña")              
-       
-        } else if (inputContrasenia.value.length<8){
-            errores.push("La contraseña tiene que tener al menos ocho caracteres")
-            
-        }
-    
-        if (errores.length > 0) {
-       
-            //ulErrores.classList.add("alert-warning")
-        
-            for (let i=0; i<errores.length ; i++){
-                
-                ulErrores.innerHTML += "<li>" + errores[i] + "<li>"
-            }
-            //  form.submit()
-        }
-    
-        console.log("haciendo submit");
-    } 
-    )
-     

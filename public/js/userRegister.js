@@ -1,37 +1,35 @@
 window.addEventListener("load", function () {
-    const form = document.querySelector(".create-form")
     const inputProfileImage = document.querySelector("#profileImage")
     const inputNombre = document.querySelector("#nombre")
     const inputEmail = document.querySelector("#email")
-    const inputTelefono = document.querySelector("#telefono")
     const inputContrasenia = document.querySelector("#contrasenia")
     const inputConfirmarContrasenia = document.querySelector("#confirmarContrasenia")
-    const divErrores = document.querySelector(".errores")
-    const ulErrores = this.document.querySelector(".ulErrores")
+    
 
     //inputNombre.focus()
 
     let errores = []
 
-    inputProfileImage.addEventListener("change", () => {
-        //if (inputProfileImage.value == "") {
-        //  errores.push("Debe cargar una imagen")}
-    
-        // Esto hizo César, es para obtener la extensión del archivo
-        //let fileExtension = inputProfileImage.value.split(".").pop();
-        //console.log("La imágen se cargó ", fileExtension)
-    
-        //Ésto hice yo, lo saque del middleware, no funciona
+    inputProfileImage.addEventListener("mouseOver",()=>{
+
         let errorImage = document.querySelector(".errorImage")
         if(inputProfileImage == ""){
             errorImage.innerHTML = "Debe cargar una imágen"
-        } else if (inputProfileImage != "") {
-            let acceptedExtensions = ['.jpg' , '.gif' , '.png', '.jpeg'];
+
+    }})    
+
+    inputProfileImage.addEventListener("change", () => {   
+        
+        let errorImage = document.querySelector(".errorImage")        
+        
+         if (inputProfileImage != "") {
+            let acceptedExtensions = ['jpg' , 'gif' , 'png', 'jpeg'];
             let fileExtension = inputProfileImage.value.split(".").pop();
              if (!acceptedExtensions.includes(fileExtension)) {
                 errorImage.innerHTML = "Las extensiones de archivo permitidas son .jpg , .gif , .png , .jpeg!!!"
         }} else {
             errorName.innerHTML = " "
+            console.log("Imagen ok")
         }
 
         
@@ -60,13 +58,11 @@ window.addEventListener("load", function () {
     }
     )
 
-    inputEmail.addEventListener("keyup", () => {
+    inputEmail.addEventListener("keyup", () => {        
 
-        let emailValidation = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+    let errorEmail = document.querySelector(".errorEmail")
 
-        let errorEmail = document.querySelector(".errorEmail")
-
-        if (emailValidation.test(inputEmail.value)) {
+        if (!validator.isEmail(inputEmail.value)) {
 
             errorEmail.innerHTML = "Debe ingresar un email válido"
 
@@ -74,20 +70,29 @@ window.addEventListener("load", function () {
             errorEmail.innerHTML = " "
         }
 
+        
+
     }
 
 
     )
 
-    inputTelefono.addEventListener("blur", () => {
+    inputEmail.addEventListener("blur", () => {        
 
-        if (inputTelefono.value == "") {
-
-            errores.push("Debe ingresar un número")
-
+        let errorEmail = document.querySelector(".errorEmail")
+    
+            if (inputEmail.value == "") {
+    
+                errorEmail.innerHTML = "Debes completar este campo"
+    
+            } else {
+                errorEmail.innerHTML = " "
+            }
+    
         }
-    }
-    )
+    
+    
+        )   
 
     inputContrasenia.addEventListener("keyup", () => {
         let errorPassword = document.querySelector(".errorPassword")
@@ -116,36 +121,11 @@ window.addEventListener("load", function () {
             errorConfirmPassword.innerHTML = " "
         }})
 
-        //if (inputConfirmarContrasenia.value == "") {
-        //errores.push("Debes completar el campo Confirmar Contraseña")
-        //} else if (inputConfirmarContrasenia.value.length < 8) {
-        //    errores.push("La contraseña tiene que tener al menos ocho caracteres")}
-        //else if (inputConfirmarContrasenia.value == inputContrasenia.value) {
-        //    errores.push("La contraseña tiene que ser igual a la anterior")}})
+        
 
-    form.addEventListener("submit", (e) => {
-
-        e.preventDefault();
-
-        if (errores.length > 0) {
-
-
-            //ulErrores.classList.add("alert-warning")
-
-            for (let i = 0; i < errores.length; i++) {
-
-
-
-                ulErrores.innerHTML += "<li>" + errores[i] + "<li>"
-            }
-            //  form.submit()
-        }
-
-        console.log("haciendo submit");
-
-        //
-    }
-    )
+    
+        
+    
 
 
 

@@ -5,6 +5,7 @@
     
 <body>
     <%- include ('../partials/header.ejs')%>
+    <script src="https://unpkg.com/validator@latest/validator.min.js"></script>
     <script src = "/js/userRegister.js"> </script>
  
    <!--Formulario de registro de la pagina-->
@@ -52,7 +53,7 @@
      <% if (locals.errors && errors.email) {%>
         <div class="text-danger"><%= errors.email.msg %>  </div>
         <% } %>
-        <p class="errorEmail errorFront">Debes ingresar un email válido.</p>
+        <p class="errorEmail errorFront"></p>
 
 
 
