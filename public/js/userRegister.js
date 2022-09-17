@@ -26,10 +26,10 @@ window.addEventListener("load", function () {
         if(inputProfileImage == ""){
             errorImage.innerHTML = "Debe cargar una imágen"
         } else if (inputProfileImage != "") {
-            let acceptedExtensions = ['jpg' , 'gif' , 'png', 'jpeg'];
+            let acceptedExtensions = ['.jpg' , '.gif' , '.png', '.jpeg'];
             let fileExtension = inputProfileImage.value.split(".").pop();
              if (!acceptedExtensions.includes(fileExtension)) {
-                errorImage.innerHTML = "Las extensiones de archivo permitidas son .jpg , .gif , .png , .jpeg"
+                errorImage.innerHTML = "Las extensiones de archivo permitidas son .jpg , .gif , .png , .jpeg!!!"
         }} else {
             errorName.innerHTML = " "
         }
