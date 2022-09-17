@@ -13,18 +13,28 @@ window.addEventListener("load", function () {
 
     let errores = []
 
-    inputProfileImage.addEventListener("blur", () => {
-
-        if (inputProfileImage.value == "") {
-
-            errores.push("Debe cargar una imagen")
-
-
-
-
+    inputProfileImage.addEventListener("change", () => {
+        //if (inputProfileImage.value == "") {
+        //  errores.push("Debe cargar una imagen")}
+    
+        // Esto hizo César, es para obtener la extensión del archivo
+        //let fileExtension = inputProfileImage.value.split(".").pop();
+        //console.log("La imágen se cargó ", fileExtension)
+    
+        //Ésto hice yo, lo saque del middleware, no funciona
+        if(inputProfileImage == ""){
+            errorImage.innerHTML = "Debe cargar una imágen"
+        } else if (inputProfileImage != "") {
+            let acceptedExtensions = ['.jpg' , '.gif' , '.png', '.jpeg'];
+            let fileExtension = inputProfileImage.value.split(".").pop();
+             if (!acceptedExtensions.includes(fileExtension)) {
+                errorImage.innerHTML = "Las extensiones de archivo permitidas son .jpg , .gif , .png , .jpeg"
+        }} else {
+            errorName.innerHTML = " "
         }
-    }
-    )
+
+        
+    })
 
     inputNombre.addEventListener("keyup", () => {
 
