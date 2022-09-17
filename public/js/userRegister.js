@@ -22,10 +22,11 @@ window.addEventListener("load", function () {
         //console.log("La imágen se cargó ", fileExtension)
     
         //Ésto hice yo, lo saque del middleware, no funciona
+        let errorImage = document.querySelector(".errorImage")
         if(inputProfileImage == ""){
             errorImage.innerHTML = "Debe cargar una imágen"
         } else if (inputProfileImage != "") {
-            let acceptedExtensions = ['.jpg' , '.gif' , '.png', '.jpeg'];
+            let acceptedExtensions = ['jpg' , 'gif' , 'png', 'jpeg'];
             let fileExtension = inputProfileImage.value.split(".").pop();
              if (!acceptedExtensions.includes(fileExtension)) {
                 errorImage.innerHTML = "Las extensiones de archivo permitidas son .jpg , .gif , .png , .jpeg"
