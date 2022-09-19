@@ -12,13 +12,10 @@ window.addEventListener("load", function(){
     inputNombre.addEventListener("keyup", () => {
         let errorName = document.querySelector(".errorName")
         if (inputNombre.value.length < 5) {
-
-            errorName.innerHTML = "El nombre debe tener al menos cinco caracteres"
-            //  inputNombre.classList.remove("errorName")               
+            errorName.innerHTML = "El nombre debe tener al menos cinco caracteres"           
         } else {
-            // inputNombre.classList.add("errorName") 
             errorName.innerHTML = " "
-        }})
+        }});
 
     inputDescripcion.addEventListener("keyup", () => {
         let errorDescription = document.querySelector(".errorDescription")
@@ -26,40 +23,11 @@ window.addEventListener("load", function(){
            errorDescription.innerHTML = "El nombre debe tener al menos veinte caracteres"
         } else {
             errorDescription.innerHTML = " "
-        }})
+        }});
     
-
-    form.addEventListener("submit", (e) => {
-    
-        e.preventDefault();
-        let errores = []
-        if (inputNombre.value == ""){
-            errores.push("Debes completar el campo Nombre")              
-        } else if (inputNombre.value.length < 5){
-            errores.push("El nombre debe tener al menos 5 caracteres.")
-        }
-
-        if (inputDescripcion.value == ""){
-            errores.push("Debes completar el campo descripción")              
-        } else if (inputDescripcion.value.length < 20){
-            errores.push("La descropción debe tener al menos 20 caracteres.")
-        }
-
-        if (inputPrecio.value == ""){
-            errores.push("Debes completar el campo precio")              
-        } 
-    
-        if (errores.length > 0) {
-            //ulErrores.classList.add("alert-warning")
-        
-            for (let i=0; i<errores.length ; i++){
-        
-                ulErrores.innerHTML += "<li>" + errores[i] + "<li>"
-            }
-            //  form.submit()
-        }
-    } 
-    )
-    }); 
+    //form.addEventListener("submit", (e) => {
+    //    e.preventDefault();
+    //});
+    }) 
     
     
