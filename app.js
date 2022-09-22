@@ -27,11 +27,12 @@ app.use(userLoggedMiddleware);
 const mainRouter = require('./src/routes/mainRouter');
 const productsRouter = require('./src/routes/productsRouter');
 const usersRouter = require('./src/routes/usersRouter');
+const apiRouter = require('./src/routes/apiRouter');
 
 app.use('/' , mainRouter);
 app.use('/products' , productsRouter);
 app.use('/users' , usersRouter);
-//app.use('/api', apiRouter)
+app.use('/api', apiRouter);
 
 // Error
 app.use((req,res,next)=>{
