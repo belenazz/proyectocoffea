@@ -31,6 +31,7 @@ const usersRouter = require('./src/routes/usersRouter');
 app.use('/' , mainRouter);
 app.use('/products' , productsRouter);
 app.use('/users' , usersRouter);
+//app.use('/api', apiRouter)
 
 // Error
 app.use((req,res,next)=>{
