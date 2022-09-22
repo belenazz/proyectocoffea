@@ -104,5 +104,23 @@
 
 **5. Dejar de hacer.**
 
+## Sprint 6
+**1. Comenzar a hacer.**
+- Reunion weekly. 
+
+**2. Hacer más.**
+- Comprometerse con el proyecto. 
+- Preguntar e interiorizarse acerca del trabajo que hacen los compañeros. 
+
+**3. Continuar haciendo.**
+- Sacarse dudas con los profesores.
+- Respetar las fechas parciales de avances.
+- Trabajar en conjunto con compañeros de otros grupos.
+
+**4. Hacer menos.**
+- Modificar tareas de compañeros sin consultar o notificar.
+
+**5. Dejar de hacer.**
+- Faltar a reuniones sin avisar. 
 
 
