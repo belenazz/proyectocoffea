@@ -7,25 +7,31 @@ window.addEventListener("load", function () {
     const inputConfirmarContrasenia = document.querySelector("#confirmarContrasenia");
 
 
-    inputProfileImage.addEventListener("mouseOver",()=>{  
+    inputProfileImage.addEventListener("mouseover",()=>{  
+        
         let errorImage = document.querySelector(".errorImage")
-        if(inputProfileImage == ""){
+        if(inputProfileImage.value == ""){
             errorImage.innerHTML = "Debe cargar una imágen"
-        } else {
-        errorImage.innerHTML = " "
-    }});    
+        } 
+    });    
 
     inputProfileImage.addEventListener("change", () => {   
         let errorImage = document.querySelector(".errorImage")        
-         if (inputProfileImage != "") {
+        if (inputProfileImage.value != "") {
             let acceptedExtensions = ['jpg' , 'gif' , 'png', 'jpeg'];
             let fileExtension = inputProfileImage.value.split(".").pop();
-             if (!acceptedExtensions.includes(fileExtension)) {
+            if (!acceptedExtensions.includes(fileExtension)) {
                 errorImage.innerHTML = "Las extensiones de archivo permitidas son .jpg , .gif , .png , .jpeg!!!"
-        }} else {
-            errorImage.innerHTML = " "
-            console.log("Imagen ok")
-    }});
+            }else{
+                errorImage.innerHTML = " "
+            }
+    
+        } 
+        // else {
+        //     errorImage.innerHTML = " "
+        //     console.log("Imagen ok")
+        // }
+    });
 
     inputNombre.addEventListener("keyup", () => {
         let errorName = document.querySelector(".errorName")
