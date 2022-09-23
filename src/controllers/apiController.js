@@ -8,8 +8,11 @@ const apiController = {
 	products: (req, res) => {
         db.Products.findAll()
         .then (products=> {
-            res.send(products)
-		})
+            res.send({
+				total: products.length, 
+				data: products
+				});
+			})
 	},
 
 	detail: (req, res) => {
@@ -22,7 +25,10 @@ const apiController = {
     users: (req, res) => {
         db.Users.findAll()
             .then (users=> {
-            res.send(users)
+            res.send({
+				total: users.length,
+				data: users
+				});
 		    })
 	},
 
