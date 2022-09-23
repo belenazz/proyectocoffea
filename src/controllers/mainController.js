@@ -11,8 +11,7 @@ const mainController = {
 
         db.Products.findAll()
         .then (products=> {
-           // res.render('home',{products})
-           res.send(products)
+           res.render('home',{products})
         })
         
     },
