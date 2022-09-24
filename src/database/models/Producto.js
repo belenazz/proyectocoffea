@@ -1,5 +1,3 @@
-const sequelize = require("sequelize");
-
 module.exports = (sequelize, dataTypes) =>{
     let alias = "Products";
     let cols = {
@@ -30,6 +28,13 @@ module.exports = (sequelize, dataTypes) =>{
     }
 
     const Product = sequelize.define(alias , cols , config)
+
+    Product.associate = function (models) {
+        Product.belongsTo(models.Origins, {
+            as : "origin",
+            foreignKey: "origin_id"
+        })         
+    }
 
     return Product;
 }

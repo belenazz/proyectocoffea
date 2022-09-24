@@ -4,6 +4,7 @@ let db = require("../database/models");
 const { Console } = require('console');
 const { validationResult } = require('express-validator');
 const Op = db.Sequelize.Op
+const Origins = db.Origins;
 
 /*const productsFilePath = path.join(__dirname, '../data/products.json');
 let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8')); */
@@ -30,7 +31,10 @@ const productsController = {
 	},
 
 	create: (req, res) => {
-		res.render('cargar_productos')
+		Origins.findAll()
+		.then(function(origins) {
+		res.render('cargar_productos', {origins})			
+		})
 	},
 
 	store: (req, res) => {

@@ -35,6 +35,17 @@
     </div><br>
 
     <div class="campo">
+        <label for="origin_id"><strong>Origen:</strong></label>
+        <select name="origin_id" id="origin_id">
+            <option>Seleccione un origen</option>
+            <option>-</option>
+            <% origins.forEach(origin => { %>
+                <option value="<%= origin.id %>" ><%=origin.name%></option>
+            <% }) %>
+        </select>
+    </div><br>
+
+    <div class="campo">
         <label for="descripción"><strong>Descripción:</strong></label>
         <textarea name="description" id="descripcion" placeholder="Escriba la descripción"  ></textarea>
             <% if (locals.errors && errors.description) { %>

@@ -19,5 +19,12 @@ module.exports = (sequelize, dataTypes) =>{
 
     const Origin = sequelize.define(alias , cols , config)
 
+    Origin.associate = function (models) {
+        Origin.hasMany (models.Products, {
+            as : "products",
+            foreignKey: "origin_id"
+        })         
+    }
+
     return Origin;
 }
