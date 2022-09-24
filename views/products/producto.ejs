@@ -14,7 +14,8 @@
         </section>
         <section id="seccion2">
             <div id="detalleproducto">
-                <h1><%= product.name %></h1>
+                <h1><%= product.name %></h1> <br>
+                <p class="origen">Origen: <%= product.origin_id  %> </p> <br>
                 <div class="calificacion">
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
@@ -22,7 +23,7 @@
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>            
                 </div>
-                    <p class="precio">$ <%= product.price %></p>
+                <p class="precio">$ <%= product.price %></p>
             </div>
             <div>
                 <form class="opciones" action="/iconoCarrito" method="get">
