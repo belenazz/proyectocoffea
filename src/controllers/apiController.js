@@ -6,11 +6,11 @@ const Op = db.Sequelize.Op
 const apiController = {
 
 	products: (req, res) => {
-        db.Products.findAll()
-        .then (products=> {
-            res.send({
-				total: products.length, 
-				data: products
+		db.Products.findAll()
+			.then(products => {
+				res.send({
+					total: products.length,
+					data: products
 				});
 			})
 	},
@@ -22,21 +22,35 @@ const apiController = {
 			)
 	},
 
-    users: (req, res) => {
-        db.Users.findAll()
-            .then (users=> {
-            res.send({
-				total: users.length,
-				data: users
-				});
-		    })
-	},
+	users: (req, res) => {
+		db.Users.findAll()
+			.then(users => {
+				users.forEach(user => {
+					let user = {
+						id: user.id,
+						name: user.name,
+						email: user.email,
+						detail: null
+					}
+				}
+				)
+			});
+			
+		res.send({
+			count: users.length,
+			users: {
 
-    user: (req, res) => {
+
+
+			})
+	}
+},
+
+	user: (req, res) => {
         db.Users.findByPk(req.params.id)
-			.then(user =>
-				res.send(user)
-			)
+	.then(user =>
+		res.send(user)
+	)
     }
 
 
