@@ -26,29 +26,23 @@ const apiController = {
 		db.Users.findAll()
 			.then(users => {
 				users.forEach(user => {
-					let user = {
+					let usuario = {
 						id: user.id,
 						name: user.name,
 						email: user.email,
-						detail: null
+						detail: "http://localhost:3000/api/users/" + user.id
 					}
-				}
-				)
+					res.send({
+						count: users.length,
+						users: usuario 
+						})
+				})
 			});
-			
-		res.send({
-			count: users.length,
-			users: {
-
-
-
-			})
-	}
 },
 
 	user: (req, res) => {
         db.Users.findByPk(req.params.id)
-	.then(user =>
+		.then(user =>
 		res.send(user)
 	)
     }
