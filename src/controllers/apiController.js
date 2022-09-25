@@ -24,12 +24,23 @@ const apiController = {
 				})
 			})
 	},
-
+//http://localhost:3000/images/product-1660825340811.jpg
 	detail: (req, res) => {
 		db.Products.findByPk(req.params.id)
-			.then(product =>
-				res.send(product)
-			)
+		.then(product =>{
+			let producto = {
+				id: product.id,
+				name: product.name,
+				origin_id: product.origin_id,
+				price: product.price,
+				description: product.description,
+				image: "http://localhost:3000/images/" + product.image
+			}
+			res.send(producto)
+		}
+		
+	)
+			
 	},
 
 	users: (req, res) => {
