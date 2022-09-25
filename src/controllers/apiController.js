@@ -8,10 +8,20 @@ const apiController = {
 	products: (req, res) => {
 		db.Products.findAll()
 			.then(products => {
+				let productos = []
+				products.forEach(product => {
+					let producto = {
+						id: product.id,
+						name: product.name,
+						description: product.description,
+						detail: "http://localhost:3000/api/products/" + product.id
+					}
+					productos.push(producto)
+				})	
 				res.send({
-					total: products.length,
-					data: products
-				});
+					count: products.length,
+					products: productos
+				})
 			})
 	},
 
@@ -25,6 +35,7 @@ const apiController = {
 	users: (req, res) => {
 		db.Users.findAll()
 			.then(users => {
+				let usuarios = []
 				users.forEach(user => {
 					let usuario = {
 						id: user.id,
@@ -32,22 +43,32 @@ const apiController = {
 						email: user.email,
 						detail: "http://localhost:3000/api/users/" + user.id
 					}
+					usuarios.push(usuario)
+					})
 					res.send({
 						count: users.length,
-						users: usuario 
+						users: usuarios
 						})
-				})
+				
 			});
 },
 
 	user: (req, res) => {
         db.Users.findByPk(req.params.id)
-		.then(user =>
-		res.send(user)
+		.then(user =>{
+			let usuario = {
+				id: user.id,
+				name: user.name,
+				email: user.email,
+				telefono: user.tel,
+				avatar: "http://localhost:3000/images/usersImages/" + user.avatar
+			}
+			res.send(usuario)
+		}
+		
 	)
+	
     }
-
-
 
 
 }
