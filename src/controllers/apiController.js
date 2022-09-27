@@ -6,23 +6,49 @@ const Op = db.Sequelize.Op
 const apiController = {
 
 	products: (req, res) => {
-		db.Products.findAll()
-			.then(products => {
-				let productos = []
-				products.forEach(product => {
-					let producto = {
-						id: product.id,
-						name: product.name,
-						description: product.description,
-						detail: "http://localhost:3000/api/products/" + product.id
-					}
-					productos.push(producto)
-				})	
-				res.send({
-					count: products.length,
-					products: productos
-				})
+		let origins = db.Origins.findAll({include:"products"});
+		let products = db.Products.findAll({include:"origin"});
+
+		Promise.all([origins, products])
+		.then(function ([origins,products]) {
+			const countByCategories = {}
+			origins.forEach(element => {
+				countByCategories[element.name]=element.products.length
+			});
+			const productos = products.map(product =>( 
+				{ 
+					id: product.id,
+					name: product.name,
+					description: product.description,
+					origin:product.origin,
+					detail: "http://localhost:3000/api/products/" + product.id
+				}
+			))
+			res.json({
+				count: products.length,
+				countByCategories,
+				products: productos
 			})
+			
+		})
+		// .then(categories =>{
+		// 	let categorias = categories.map (category =>(
+		// 		{
+		// 			Origen: category.name,
+		// 			Products: category.products.length,
+		// 		}
+		// 	))
+		// 	res.send(categorias)
+		// })
+
+		// db.Products.findAll()
+		// 	.then(products => {
+		// 		res.send({
+		// 			count: products.length,
+		//             
+		// 			products: productos
+		// 		})
+		// 	})
 	},
 //http://localhost:3000/images/product-1660825340811.jpg
 	detail: (req, res) => {
@@ -46,16 +72,13 @@ const apiController = {
 	users: (req, res) => {
 		db.Users.findAll()
 			.then(users => {
-				let usuarios = []
-				users.forEach(user => {
-					let usuario = {
+				let usuarios =users.map(user => ({
 						id: user.id,
 						name: user.name,
 						email: user.email,
 						detail: "http://localhost:3000/api/users/" + user.id
-					}
-					usuarios.push(usuario)
 					})
+					)
 					res.send({
 						count: users.length,
 						users: usuarios
