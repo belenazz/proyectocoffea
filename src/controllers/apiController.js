@@ -20,7 +20,7 @@ const apiController = {
 					id: product.id,
 					name: product.name,
 					description: product.description,
-					origin:product.origin,
+					origin:product.origin.name,
 					detail: "http://localhost:3000/api/products/" + product.id
 				}
 			))
@@ -52,7 +52,7 @@ const apiController = {
 	},
 //http://localhost:3000/images/product-1660825340811.jpg
 	detail: (req, res) => {
-		db.Products.findByPk(req.params.id)
+		db.Products.findByPk(req.params.id, {include:"origin"})
 		.then(product =>{
 			let producto = {
 				id: product.id,
@@ -60,6 +60,7 @@ const apiController = {
 				origin_id: product.origin_id,
 				price: product.price,
 				description: product.description,
+				origin:product.origin.name,
 				image: "http://localhost:3000/images/" + product.image
 			}
 			res.send(producto)
