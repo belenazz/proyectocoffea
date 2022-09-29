@@ -5,7 +5,9 @@ const publicPath= path.resolve(__dirname, './public')
 const methodOverride =  require('method-override');
 const session = require('express-session');
 const cookies = require('cookie-parser'); 
+var cors = require('cors')
 
+app.use(cors())
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static(publicPath));
@@ -22,6 +24,7 @@ app.set('view engine', 'ejs');
 // Middlewares
 const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware')
 app.use(userLoggedMiddleware); 
+
 
 // Routers
 const mainRouter = require('./src/routes/mainRouter');
