@@ -20,7 +20,13 @@ function Categories() {
         <br/>
         <div>
             <h2>Cantidad porductos por Categorias </h2>
-            <h4></h4>
+            {
+                Object.keys(categoriesInDb).map((element)=>(
+                    <p key={element}>{element}:{categoriesInDb[element]} </p>
+                )
+                    
+                )
+            }
         </div>
         <br/>
         <br/>

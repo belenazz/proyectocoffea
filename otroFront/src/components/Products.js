@@ -15,8 +15,10 @@ function Products() {
 
   return(
     <>
+    
+    <div className='productsContainer'> 
 
-    <div>
+    <div className="productosDb">
         <h2>Cantidad total de productos </h2>
         <h4>{productsInDb.length}</h4>
     </div>
@@ -51,6 +53,7 @@ function Products() {
         <h4> ORIGEN: {lastProductsInDb.origin}</h4> 
     </div>
 
+    </div>
         
     </>
   )
