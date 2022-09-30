@@ -44,11 +44,11 @@ function Products() {
     </div>
 
     <div>
-        <h2>Último producto creado </h2>
-        <h4> ID:{lastProductsInDb.id}</h4>
-        <h4> NOMBRE PRODUCTO:{lastProductsInDb.name}</h4>
-        <h4> DESCRIPCION PRODUCTO:{lastProductsInDb.description}</h4>
-        <h4> ORIGEN DEL PRODUCTO:{lastProductsInDb.origin}</h4>
+        <h2>Último producto creado:</h2>
+        <h4> ID: {lastProductsInDb.id}</h4>
+        <h4> NOMBRE: {lastProductsInDb.name}</h4>
+        <h4> DESCRIPCION: {lastProductsInDb.description}</h4>
+        <h4> ORIGEN: {lastProductsInDb.origin}</h4> 
     </div>
 
         
