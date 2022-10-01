@@ -1,0 +1,100 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;1,600&family=Roboto:wght@400;700&display=swap" rel="stylesheet');
+
+
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+.productsContainer{
+    display: flex;
+    background-color: #F5ECCE;
+}
+
+.productosDb{
+    display: flex;
+    box-sizing: border-box;
+    width: 40%;
+    padding: 15px;
+    flex-direction: column;
+    text-align: center;
+    margin: auto;
+    flex-wrap: wrap;
+    max-width: 400px;
+    background-color: #fef9f2;
+    border: solid rgba(109, 109,109,0.1) 1px;
+    margin-bottom: 50px;
+    margin-top: 20px;
+    font-weight: 500;
+    border-radius: 5px;
+
+}
+.productsH4{
+    margin-top: 35%
+}
+.productosDb ul {
+    list-style-type: none;
+    text-align: center
+}
+.productosDb ul li{
+    margin: 9px;
+}
+
+hr {
+    border: none;
+    width: 90%;
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    height: 40px;
+    background: linear-gradient(135deg, #F5ECCE 25%, transparent 25%) -20px 0, linear-gradient(225deg, #ECEDDC 25%, transparent 25%) -20px 0, linear-gradient(315deg, #ECEDDC 25%, transparent 25%), linear-gradient(45deg, #ECEDDC 25%, transparent 25%);
+    background-size: 40px 40px;
+    background-color: hsl(40,15%,31.4%);
+}
+.usersContainer {
+
+    display: flex;
+    background-color: #F5ECCE;
+
+}
+
+.usersInDb {
+    display: flex;
+    box-sizing: border-box;
+    width: 40%;
+    padding: 15px;
+    flex-direction: column;
+    text-align: center;
+    margin: auto;
+    flex-wrap: wrap;
+    max-width: 400px;
+    background-color: #fef9f2;
+    border: solid rgba(109, 109,109,0.1) 1px;
+    margin-bottom: 50px;
+    margin-top: 20px;
+    font-weight: 500;
+    border-radius: 5px;
+}
+
+.categoriesContainer{
+    display: flex;
+    background-color: #F5ECCE;
+}
+.categoriesInDb{
+
+    display: flex;
+    box-sizing: border-box;
+    width: 40%;
+    padding: 15px;
+    flex-direction: column;
+    text-align: center;
+    margin: auto;
+    flex-wrap: wrap;
+    max-width: 400px;
+    background-color: #fef9f2;
+    border: solid rgba(109, 109,109,0.1) 1px;
+    margin-bottom: 50px;
+    margin-top: 20px;
+    font-weight: 500;
+    border-radius: 5px;
+    
+}

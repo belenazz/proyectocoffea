@@ -11,14 +11,15 @@ function Categories() {
     },[])
     return(
     <>
-        <div>
+        <div className='categoriesContainer'> 
+        <div className='categoriesInDb'>
             <h2>Cantidad total de Categorias </h2>
             <h4>{Object.keys(categoriesInDb).length}</h4>
         </div>
         <br/>
         <br/>
         <br/>
-        <div>
+        <div className='categoriesInDb'>
             <h2>Cantidad porductos por Categorias </h2>
             {
                 Object.keys(categoriesInDb).map((element)=>(
@@ -31,6 +32,7 @@ function Categories() {
         <br/>
         <br/>
         <br/>
+        </div>
     </>
     )
 }

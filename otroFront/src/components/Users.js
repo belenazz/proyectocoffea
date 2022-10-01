@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react';
+import "../assets/css/styles.css"
+
 
 function Users() {
     const [usersInDb, setUsersInDb]= useState([])
@@ -16,7 +18,9 @@ function Users() {
   return(
     <>
 
-    <div>
+    <div className='usersContainer'> 
+
+    <div className='usersInDb'>
         <h2>Cantidad total de usuarios </h2>
         <h4>{usersInDb.length}</h4>
     </div>
@@ -24,12 +28,14 @@ function Users() {
     <br/> 
     <br/> 
     <br/> 
-    <div>
+    <div className='usersInDb'>
         <h2>Último usuario creado </h2>
         <h4> ID: {lastUserInDb.id}</h4>
         <h4> NOMBRE: {lastUserInDb.name}</h4>
         <h4> EMAIL: {lastUserInDb.email}</h4>
     </div>
+    </div>
+    <hr ></hr>
     </>
   )
 }

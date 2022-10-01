@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Cookie&family=Montserrat:ital,wght@0,700;1,600&family=Roboto:wght@400;700&display=swap');
+
 * {
     font-family: 'Montserrat', sans-serif;
     margin: 0px;
@@ -8,11 +10,11 @@ header{
     background-color: hsl(40,15%,31.4%);
     /* background-color: rgba(94, 83, 64, 0.95); */
     display: flex;
-    justify-content: space-around;
     padding: 10px;
     margin: auto;
     align-items: center;
     width: 100vw;
+    justify-content: center
 }
 #logo{
     width: 7rem;

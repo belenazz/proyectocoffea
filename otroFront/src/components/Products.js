@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import "../assets/css/styles.css"
 
 function Products() {
     const [productsInDb, setProductsInDb]= useState([])
@@ -20,16 +21,16 @@ function Products() {
 
     <div className="productosDb">
         <h2>Cantidad total de productos </h2>
-        <h4>{productsInDb.length}</h4>
+        <h4 className='productsH4'>{productsInDb.length}</h4>
     </div>
 
     <br/> 
     <br/> 
     <br/> 
 
-    <div>
+    <div className="productosDb">
         <h2>Listado de productos </h2>
-        
+        <div className='productsDiv'> 
         <ul> 
             {
                 productsInDb.map((p, i)=>{
@@ -42,18 +43,23 @@ function Products() {
                 })
             }
         </ul>
+        </div>
 
     </div>
 
-    <div>
+    <div className="productosDb">
         <h2>Último producto creado:</h2>
+        <div className='productsDiv'>
         <h4> ID: {lastProductsInDb.id}</h4>
         <h4> NOMBRE: {lastProductsInDb.name}</h4>
         <h4> DESCRIPCION: {lastProductsInDb.description}</h4>
         <h4> ORIGEN: {lastProductsInDb.origin}</h4> 
+        </div>
     </div>
 
     </div>
+
+    <hr ></hr>
         
     </>
   )
