@@ -9,6 +9,27 @@ window.addEventListener("load", function(){
 
     inputNombre.focus()   
     
+    inputImagenProducto.addEventListener("mouseover",()=>{  
+        
+        let errorImage = document.querySelector(".errorImage")
+        if(inputImagenProducto.value == ""){
+            errorImage.innerHTML = "Debe cargar una imágen"
+        } 
+    });    
+
+    inputImagenProducto.addEventListener("change", () => {   
+        let errorImage = document.querySelector(".errorImage")        
+        if (inputImagenProducto.value != "") {
+            let acceptedExtensions = ['jpg' , 'gif' , 'png', 'jpeg'];
+            let fileExtension = inputImagenProducto.value.split(".").pop();
+            if (!acceptedExtensions.includes(fileExtension)) {
+                errorImage.innerHTML = "Las extensiones de archivo permitidas son .jpg , .gif , .png , .jpeg"
+            }else{
+                errorImage.innerHTML = " "
+            }
+        } 
+    });
+
     inputNombre.addEventListener("keyup", () => {
         let errorName = document.querySelector(".errorName")
         if (inputNombre.value.length < 5) {
