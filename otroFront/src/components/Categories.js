@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import "../assets/css/styles.css"
 
 function Categories() {
     const [categoriesInDb, setCategoriesInDb]= useState({});
@@ -14,20 +15,21 @@ function Categories() {
         <div className='categoriesContainer'> 
         <div className='categoriesInDb'>
             <h2>Cantidad total de Categorias </h2>
-            <h4>{Object.keys(categoriesInDb).length}</h4>
+            <h4 className='productsH4'>{Object.keys(categoriesInDb).length}</h4>
         </div>
         <br/>
         <br/>
         <br/>
         <div className='categoriesInDb'>
             <h2>Cantidad porductos por Categorias </h2>
+            <div className='categoriesDetail'>
             {
                 Object.keys(categoriesInDb).map((element)=>(
                     <p key={element}>{element}:{categoriesInDb[element]} </p>
                 )
-                    
                 )
             }
+            </div>
         </div>
         <br/>
         <br/>

@@ -29,14 +29,17 @@
 
 }
 .productsH4{
-    margin-top: 35%
+    padding: 25%; 
+    font-size: xxx-large;
 }
 .productosDb ul {
-    list-style-type: none;
-    text-align: center
+    text-align: left;
+    font-size: small;
+    margin-top: 5%;
+    line-height: 2;
 }
 .productosDb ul li{
-    margin: 9px;
+    margin: 5px;
 }
 
 hr {
@@ -97,4 +100,14 @@ hr {
     font-weight: 500;
     border-radius: 5px;
     
+};
+
+.totalUsers {
+    padding: 25%; 
+    font-size: xxx-large;
+}
+
+div.categoriesDetail{
+    text-align: left;
+    line-height: 2 ;
 }
