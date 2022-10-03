@@ -25,7 +25,7 @@ function Categories() {
             <div className='categoriesDetail'>
             {
                 Object.keys(categoriesInDb).map((element)=>(
-                    <p key={element}>{element}:{categoriesInDb[element]} </p>
+                    <p key={element}>{element}: {categoriesInDb[element]} productos </p>
                 )
                 )
             }

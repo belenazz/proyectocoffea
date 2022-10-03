@@ -29,28 +29,9 @@ const apiController = {
 				countByCategories,
 				products: productos
 			})
-			
 		})
-		// .then(categories =>{
-		// 	let categorias = categories.map (category =>(
-		// 		{
-		// 			Origen: category.name,
-		// 			Products: category.products.length,
-		// 		}
-		// 	))
-		// 	res.send(categorias)
-		// })
-
-		// db.Products.findAll()
-		// 	.then(products => {
-		// 		res.send({
-		// 			count: products.length,
-		//             
-		// 			products: productos
-		// 		})
-		// 	})
 	},
-//http://localhost:3000/images/product-1660825340811.jpg
+
 	detail: (req, res) => {
 		db.Products.findByPk(req.params.id, {include:"origin"})
 		.then(product =>{

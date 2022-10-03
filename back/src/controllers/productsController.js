@@ -1,9 +1,8 @@
 const path = require('path');
 const fs = require('fs');
 let db = require("../database/models");
-const { Console } = require('console');
 const { validationResult } = require('express-validator');
-const Op = db.Sequelize.Op
+const Op = db.Sequelize.Op;
 const Origins = db.Origins;
 
 /*const productsFilePath = path.join(__dirname, '../data/products.json');
@@ -12,6 +11,7 @@ let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8')); */
 const productsController = {
 
 	products: (req, res) => {
+		
 		db.Products.findAll()
 			.then(function (products) {
 				res.render('./products/lista_productos', { products })
@@ -19,18 +19,21 @@ const productsController = {
 	},
 
 	detail: (req, res) => {
+
 		db.Products.findByPk(req.params.id)
 			.then(product =>
+				res.render('./products/producto', { product })
+			)
+				//CODIGO PARA JSON
 				//let idProducto = req.params.id;
 				//let product;
 				//for (let i=0; i<products.length; i++) {
 				//   if (products[i].id == idProducto) {
 				//		product = products[i];
-				res.render('./products/producto', { product })
-			)
 	},
 
 	create: (req, res) => {
+
 		Origins.findAll()
 		.then(function(origins) {
 		res.render('cargar_productos', {origins})			
@@ -40,13 +43,12 @@ const productsController = {
 	store: (req, res) => {
 
 		const resultValidation = validationResult(req);
-
-		if (resultValidation.errors.length > 0) {
-			return res.render('./cargar_productos', {
-				errors: resultValidation.mapped(),
-				oldData: req.body
-			})
-		}
+			if (resultValidation.errors.length > 0) {
+				return res.render('./cargar_productos', {
+					errors: resultValidation.mapped(),
+					oldData: req.body
+				})
+			};
 		db.Products.create({
 			name: req.body.name,
 			origin_id: req.body.origin_id,
@@ -63,20 +65,18 @@ const productsController = {
 
 		db.Products.findByPk(req.params.id)
 			.then(productToEdit =>
-
-				/* let id = req.params.id;
-				 globalThis.productToEdit = null;
-				 for (let i=0; i<products.length; i++) {
-					 if (products[i].id == id) {
-						 productToEdit = products[i];
-					 }
-				 }*/
 				res.render('editar_productos', { productToEdit })
-
 			)
+			/* let id = req.params.id;
+				globalThis.productToEdit = null;
+			    for (let i=0; i<products.length; i++) {
+				if (products[i].id == id) {
+				productToEdit = products[i];
+				} }*/
 	},
 
 	update: (req, res) => {
+
 		const id = req.params.id;
 		const validation = validationResult(req);
 		const { name, price, description } = req.body;
@@ -101,56 +101,8 @@ const productsController = {
 				res.send(err);
 			})
 		}
-
-			
-
-		
-
-
-
-		// db.Products.findByPk(req.params.id)
-		// 	.then((product) => {
-
-		// 		const resultValidation = validationResult(req);
-		// 		if (resultValidation.errors.length > 0) {
-		// 			return res.render('./editar_productos', {
-		// 				errors: resultValidation.mapped(),
-		// 				oldData: req.body,
-		// 				productToEdit: product
-		// 			})
-		// 		} else {
-
-		// 			let productToEdit = {
-		// 				...req.body,
-		// 				//image: req.file.filename
-		// 			}
-		// 			db.Products.update(
-		// 				productToEdit,
-		// 				{
-		// 					where: { id: product.id }
-		// 				}
-		// 			)
-		// 				.then(() =>
-		// 					res.redirect('/products')
-		// 				)
-		// 				.catch(error => res.send(error))
-
-
-		// 		}
-		// 	})
-
 	},
-	//  db.Products.update(
-	// {
-	// 	name: req.body.name,
-	// 	origin_id: req.body.origin,
-	// 	price: req.body.price,
-	// 	description: req.body.description,
-	// 	image: req.file.filename
-	// },
-	// {
-	//  where: {id: req.params.id}, force: true
-	// })
+	//CODIGO PARA JSON
 	/*let id = productToEdit.id;
 	for (let i=0; i<products.length; i++) {
 		if (products[i].id == id) {
@@ -160,19 +112,17 @@ const productsController = {
 			//*products[i].features = req.body.features;
 			products[i].image = req.file.filename;
 		} */
-
 	//fs.writeFileSync(productsFilePath, JSON.stringify(products), 'utf-8'); /*
 
 	destroy: (req, res) => {
+
 		db.Products.destroy({
 		where: { id: req.params.id }
-	})
-
-	// force: true es para asegurar que se ejecute la acción
-	.then(() => {
-		return res.redirect('/products')
-	})
-	.catch(error => res.send(error))
+		})
+		.then(() => {
+			return res.redirect('/products')
+		})
+		.catch(error => res.send(error))
 		// let id = req.params.id;
 		// console.log(id);
 		// products = products.filter(function(product){
@@ -183,6 +133,7 @@ const productsController = {
 	},
 
 search: (req, res) => {
+
 	db.Products.findAll({
 		where: {
 			name: {

@@ -53,7 +53,7 @@ function Products() {
         <h4> Id: {lastProductsInDb.id}</h4>
         <h4> Producto: {lastProductsInDb.name}</h4>
         <h4> Descripción: {lastProductsInDb.description}</h4>
-        <h4> Origen: {lastProductsInDb.origin_id}</h4> 
+        <h4> Origen: {lastProductsInDb.origin}</h4> 
         </div>
     </div>
 
