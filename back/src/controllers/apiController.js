@@ -20,7 +20,7 @@ const apiController = {
 					id: product.id,
 					name: product.name,
 					description: product.description,
-					origin:product.origin.name,
+					origin: product.origin.name,
 					detail: "http://localhost:3000/api/products/" + product.id
 				}
 			))

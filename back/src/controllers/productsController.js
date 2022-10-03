@@ -49,7 +49,7 @@ const productsController = {
 		}
 		db.Products.create({
 			name: req.body.name,
-			origin_id: req.body.origin,
+			origin_id: req.body.origin_id,
 			price: req.body.price,
 			description: req.body.description,
 			image: req.file.filename
