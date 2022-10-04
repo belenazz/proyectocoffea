@@ -29,7 +29,7 @@
 
 }
 .productsH4{
-    padding: 25%; 
+     
     font-size: xxx-large;
 }
 .productosDb ul {
@@ -76,6 +76,11 @@ hr {
     margin-top: 20px;
     font-weight: 500;
     border-radius: 5px;
+    justify-content: space-evenly
+}
+.usersInDb div {
+    display: flex;
+    flex-direction: column;
 }
 
 .categoriesContainer{
@@ -99,6 +104,7 @@ hr {
     margin-top: 20px;
     font-weight: 500;
     border-radius: 5px;
+    justify-content: space-evenly
     
 };
 
@@ -107,7 +113,18 @@ hr {
     font-size: xxx-large;
 }
 
+.usersInDb h2{
+    
+    display: flex;
+    align-content: stretch;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: column-reverse;
+    
+}
 div.categoriesDetail{
     text-align: left;
     line-height: 2 ;
+    margin: auto;
 }

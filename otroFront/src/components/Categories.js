@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import "../assets/css/styles.css"
+import {FaMugHot} from "react-icons/fa"
 
 function Categories() {
     const [categoriesInDb, setCategoriesInDb]= useState({});
@@ -14,18 +15,18 @@ function Categories() {
     <>
         <div className='categoriesContainer'> 
         <div className='categoriesInDb'>
-            <h2>Cantidad total de Categorias </h2>
-            <h4 className='productsH4'>{Object.keys(categoriesInDb).length}</h4>
+            <h2>Cantidad total de Categorias  <FaMugHot/></h2>
+            <div><h4 className='productsH4'>{Object.keys(categoriesInDb).length}</h4></div>
         </div>
         <br/>
         <br/>
         <br/>
         <div className='categoriesInDb'>
-            <h2>Cantidad porductos por Categorias </h2>
+            <h2>Cantidad de productos por Categorias </h2>
             <div className='categoriesDetail'>
             {
                 Object.keys(categoriesInDb).map((element)=>(
-                    <p key={element}>{element}: {categoriesInDb[element]} productos </p>
+                    <p key={element}><FaMugHot/>  {element}: {categoriesInDb[element]} </p>
                 )
                 )
             }
