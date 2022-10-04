@@ -38,7 +38,7 @@ function Users() {
         </div>
     </div>
     </div>
-    <hr ></hr>
+    <hr className='hr1'></hr>
     </>
   )
 }

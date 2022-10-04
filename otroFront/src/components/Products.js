@@ -59,7 +59,7 @@ function Products() {
 
     </div>
 
-    <hr ></hr>
+    <hr className='hr1'></hr>
         
     </>
   )
