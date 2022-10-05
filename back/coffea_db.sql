@@ -58,7 +58,7 @@ CREATE TABLE `products` (
   PRIMARY KEY (`id`),
   KEY `origin_id` (`origin_id`),
   CONSTRAINT `products_ibfk_1` FOREIGN KEY (`origin_id`) REFERENCES `origins` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -67,7 +67,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (7,'Café Juan Valdéz Premium Selection Colombia 340g',1,5000,'Café liofilizado Juan Valdez es un café rico y fácil de preparar que le dará un toque cálido y tradicional a tus mañanas. Su practicidad lo convierten en el aliado perfecto cada vez que quieras disfrutar un café con sabor tradicional y sin complicaciones. ¡Llévalo y aprovecha la calidad y sabor con los que Juan Valdez sabe sorprendernos!','product-1660825285853.jpg'),(8,'Café Pilao Tradicional Brasil 500g',2,3500,'El café Tradicional Pilão, de intensidad 8, está disponible en la versión de vacío de 500 g, tiene un punto de tueste acentuado y un proceso de molienda fina y uniforme, que garantizan y conservan su sabor fuerte y con cuerpo. Es perfecto para tu día a día.','product-1660825340811.jpg'),(9,'Café Trung Nguyen Gourmet Blend Vietnam 500g',3,10000,'Trung Nguyen Gourmet Blend es una combinación cuidadosamente seleccionada de café Arábica, Robusta, Chari (o Excelsa) y Catimore. La mezcla es increíblemente fragante y llena la habitación con aromas de especias, chocolates y frutas.','product-1660825394065.jpeg'),(10,'Café La Virginia Clasico 250g',4,250,'Un rico cafecito! ','product-1660825448889.jpg'),(11,'Café 3 Coraçoes Tradicional 500gr',2,2500,'Otra opción de café brasilero. ','product-1661994096572.jpg'),(12,'Café Morenita Colombia 500g',1,3800,'Otró café colombiano para disfrutar.','product-1660825623862.jpg'),(13,'Café Dolca Clasico 170g',4,360,'Un buen café!','product-1660858351111.jpg'),(14,'Café Nescafé Clasico 200g',4,600,'Un café para probar! ','product-1661994114175.png'),(15,'Café Serrano Selecto 125g',NULL,1800,'Un café cubano para que lo disfrutes chico!','product-1664801090545.jpg');
+INSERT INTO `products` VALUES (7,'Café Juan Valdéz Premium Selection Colombia 340g',1,5000,'Café liofilizado Juan Valdez es un café rico y fácil de preparar que le dará un toque cálido y tradicional a tus mañanas. Su practicidad lo convierten en el aliado perfecto cada vez que quieras disfrutar un café con sabor tradicional y sin complicaciones. ¡Llévalo y aprovecha la calidad y sabor con los que Juan Valdez sabe sorprendernos!','product-1660825285853.jpg'),(8,'Café Pilao Tradicional Brasil 500g',2,3500,'El café Tradicional Pilão, de intensidad 8, está disponible en la versión de vacío de 500 g, tiene un punto de tueste acentuado y un proceso de molienda fina y uniforme, que garantizan y conservan su sabor fuerte y con cuerpo. Es perfecto para tu día a día.','product-1660825340811.jpg'),(9,'Café Trung Nguyen Gourmet Blend Vietnam 500g',3,10000,'Trung Nguyen Gourmet Blend es una combinación cuidadosamente seleccionada de café Arábica, Robusta, Chari (o Excelsa) y Catimore. La mezcla es increíblemente fragante y llena la habitación con aromas de especias, chocolates y frutas.','product-1660825394065.jpeg'),(10,'Café La Virginia Clasico 250g',4,250,'Un rico cafecito! ','product-1660825448889.jpg'),(11,'Café 3 Coraçoes Tradicional 500gr',2,2500,'Otra opción de café brasilero. ','product-1661994096572.jpg'),(12,'Café Morenita Colombia 500g',1,3800,'Otró café colombiano para disfrutar.','product-1660825623862.jpg'),(13,'Café Dolca Clasico 170g',4,360,'Un buen café!','product-1660858351111.jpg'),(14,'Café Nescafé Clasico 200g',4,600,'Un café para probar! ','product-1661994114175.png'),(17,'Café Serrano Selecto 125g',5,1600,'Un rico cafecico pa probar chico!!','product-1664803034463.jpg'),(18,'Café Marolio 100gr ',4,230,'Marolio le da sabor a tu vida! ','product-1665005069402.jpg');
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -87,7 +87,7 @@ CREATE TABLE `users` (
   `avatar` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -96,7 +96,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (17,'Nicolás','nico@dh.com','1234567890','$2a$10$UbogumEYaqEjzhDT40pHF.Wdkn2i8BNLBYkivQ3iiSeB/IiKxNDMO','user-1660932626684.png'),(18,'Cosme Fulanito','cosmefulanito@dh.com','no tengo!','$2a$10$3.vK/r3PHvneShM4e5W2UOA2fxcpBPYJBIt27/61Tt7Ji3go8KzXi','user-1661993854375.png'),(19,'Lionel Messi','lionelmessi@dh.com','6547893132','$2a$10$l2wjJKGHMj.dr5jlXfAmcO1PAZ6hwzzmksQUB0qIg6QmMCG0AXjSS','user-1664800951471.jpg');
+INSERT INTO `users` VALUES (17,'Nicolás','nico@dh.com','1234567890','$2a$10$UbogumEYaqEjzhDT40pHF.Wdkn2i8BNLBYkivQ3iiSeB/IiKxNDMO','user-1660932626684.png'),(18,'Cosme Fulanito','cosmefulanito@dh.com','no tengo!','$2a$10$3.vK/r3PHvneShM4e5W2UOA2fxcpBPYJBIt27/61Tt7Ji3go8KzXi','user-1661993854375.png'),(19,'Lionel Messi','lionelmessi@dh.com','6547893132','$2a$10$l2wjJKGHMj.dr5jlXfAmcO1PAZ6hwzzmksQUB0qIg6QmMCG0AXjSS','user-1665005467207.jpg'),(22,'Homero Simpson','homero@dh.com','123454656','$2a$10$8W2xeCr3towKbtjk/9IQYucq9ZTI20vUPyl51Kt/7uMqJuVbL7MW2','user-1665005618434.jpg');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -109,4 +109,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-10-03  9:50:21
+-- Dump completed on 2022-10-05 18:38:13
