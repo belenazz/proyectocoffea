@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import "../assets/css/styles.css"
+import {FaMugHot} from "react-icons/fa"
 
 function Products() {
     const [productsInDb, setProductsInDb]= useState([])
@@ -21,7 +22,11 @@ function Products() {
 
     <div className="productosDb">
         <h2>Cantidad total de productos </h2>
+        <h2><FaMugHot/></h2>
+        <div>
         <h4 className='productsH4'>{productsInDb.length}</h4>
+        </div>
+        
     </div>
 
     <br/> 
@@ -48,7 +53,10 @@ function Products() {
     </div>
 
     <div className="productosDb">
-        <h2>Último producto creado:</h2>
+        <div>
+          <h2>Último producto creado:</h2>
+          <h2><FaMugHot/></h2>
+          </div>
         <div className='lastProduct'>
         <h4> Id: {lastProductsInDb.id}</h4>
         <h4> Producto: {lastProductsInDb.name}</h4>

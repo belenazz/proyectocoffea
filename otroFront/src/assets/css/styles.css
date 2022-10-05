@@ -26,6 +26,7 @@
     margin-top: 20px;
     font-weight: 500;
     border-radius: 5px;
+    justify-content: center;
 
 }
 .productsH4{
@@ -40,6 +41,14 @@
 }
 .productosDb ul li{
     margin: 5px;
+}
+
+.lastProduct{
+    margin-top: 15px;
+}
+.usersDb div {
+    display: flex;
+    flex-direction: column;
 }
 
 hr {
@@ -126,7 +135,7 @@ hr {
 div.categoriesDetail{
     text-align: left;
     line-height: 2 ;
-    margin: auto;
+    margin-top: 15px;
 }
 
 .hr1 {
